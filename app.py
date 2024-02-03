@@ -3,7 +3,7 @@ import streamlit as st
 import os
 
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-model = genai.GenerativeModel("gemini-pro")
+model = genai.configure(api_key=st.secrets['API_KEY'])
 
 def get_email(src, dest, subject, tone, about):
     prompt="Write an email from {} to {}. Subject line is{}. Keep the email {}. The email is regarding{}.".format(src,dest,subject,tone,about)
